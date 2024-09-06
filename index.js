@@ -48,7 +48,7 @@ app.post('/url',async(req,res)=>{
         shortURL : shortId,
         redirectionURL: longURL
     })
-    res.send(`<p>Your Short URL is <a href="http://localhost:1000/${shortId}">http://localhost:1000/${shortId}<p>`);
+    res.send(`<p>Your Short URL is <a href="${shortId}">http://localhost:1000/${shortId}<p>`);
 })
 
 
