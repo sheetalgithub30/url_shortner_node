@@ -2,7 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const  shortid  = require('shortid');
+
 const app = express();
+
+require('dotenv').config();
+
+
+
+
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
@@ -22,7 +29,7 @@ const userSchema = new mongoose.Schema({
 });
 const URL = mongoose.model('URL',userSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/url-shortner')
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log("connected to database");
 })
